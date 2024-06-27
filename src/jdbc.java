@@ -11,6 +11,12 @@ public class jdbc {
     private static final String PASSWORD = "root1234";
 
 
+   //  create Method to get a connection to the database
+    public static Connection getConnection(){
+
+    }
+
+
 
 
 
