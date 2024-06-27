@@ -7,7 +7,17 @@ public class library_menu {
 
         // create loop for user can choose choice
         do{
-
+            //library menu option
+            System.out.println("Welcome To Library Management System");
+            System.out.println("1.Add a New Book");
+            System.out.println("2.Update Book Details");
+            System.out.println("3.Delete a book");
+            System.out.println("4.Search a book");
+            System.out.println("5.Add a new member");
+            System.out.println("6.Loan a Book");
+            System.out.println("7.Return a book");
+            System.out.println("8.Exit");
+            System.out.println("Enter Your Choice:");
         }while();
 
     }
