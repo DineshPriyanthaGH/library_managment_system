@@ -12,7 +12,9 @@ public class jdbc {
 
 
    //  create Method to get a connection to the database
-    public static Connection getConnection(){
+    public static Connection getConnection() throws SQLException{
+
+        return DriverManager.getConnection(URl,USER,PASSWORD); // create connection with URL,USer and password
 
     }
 
