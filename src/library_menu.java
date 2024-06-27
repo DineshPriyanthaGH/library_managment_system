@@ -18,6 +18,10 @@ public class library_menu {
             System.out.println("7.Return a book");
             System.out.println("8.Exit");
             System.out.println("Enter Your Choice:");
+
+            choice = scanner.nextInt(); //user choice save
+
+
         }while();
 
     }
