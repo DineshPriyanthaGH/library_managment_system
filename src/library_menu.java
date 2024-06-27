@@ -1,3 +1,6 @@
+
+
+
 import java.util.Scanner; //import get user input class
 
 public class library_menu {
@@ -35,15 +38,7 @@ public class library_menu {
                 case 4:
                     BookOperations.searchBook();
                     break;
-                case 5:
-                    BookOperations.addMember();
-                    break;
-                case 6:
-                    BookOperations.loanBook();
-                    break;
-                case 7:
-                    BookOperations.returnBook();
-                    break;
+
                 case 8:
                     System.out.println(".......");
                     break;
