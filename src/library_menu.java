@@ -21,8 +21,41 @@ public class library_menu {
 
             choice = scanner.nextInt(); //user choice save
 
+            // select funtions according user choice using switch statements
+            switch(choice){
+                case 1:
+                    BookOperations.addBook();
+                    break;
+                case 2:
+                    BookOperations.updateBook();
+                    break;
+                case 3:
+                    BookOperations.deleteBook();
+                    break;
+                case 4:
+                    BookOperations.searchBook();
+                    break;
+                case 5:
+                    BookOperations.addMember();
+                    break;
+                case 6:
+                    BookOperations.loanBook();
+                    break;
+                case 7:
+                    BookOperations.returnBook();
+                    break;
+                case 8:
+                    System.out.println(".......");
+                    break;
+                default:
+                    System.out.println("Invaild Choice");
 
-        }while();
+
+
+            }
+
+
+        }while(choice !=8);
 
     }
 
