@@ -48,7 +48,7 @@ public class library_menu {
                     System.out.println(".......");
                     break;
                 default:
-                    System.out.println("Invaild Choice");
+                    System.out.println("Invalid Choice");
 
 
 
