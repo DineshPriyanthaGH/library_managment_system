@@ -21,4 +21,8 @@ public class BookOperations{
     public static void deleteBook(){
 
     }// init deleteBook method
+
+    public static void searchBook(){
+
+    }// init searchBook method
 } // create class BookOperations
