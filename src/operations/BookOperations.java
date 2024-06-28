@@ -45,6 +45,16 @@ public class BookOperations{
         } //  init addBook method
 
     public  static void updateBook(){
+        try (Connection conn = DatabaseConnection.getConnection();
+             Scanner scanner = new Scanner(System.in)) {
+
+        }catch(SQLException e) {
+            e.printStackTrace();
+        }//automatically close database  throw try catch statement
+
+
+
+
 
 
 
