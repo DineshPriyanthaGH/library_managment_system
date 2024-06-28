@@ -50,6 +50,8 @@ public class BookOperations{
 
             System.out.println("Enter Book ID to Update");
             int id = scanner.nextInt(); //get book id as input
+            System.out.println("Enter New Book Title");
+            String title = scanner.nextLine(); // get  new title as input
 
 
         }catch(SQLException e) {
