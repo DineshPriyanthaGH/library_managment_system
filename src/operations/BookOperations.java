@@ -33,6 +33,9 @@ public class BookOperations{
 
             PreparedStatement stmt = conn.prepareStatement(query); //sql statement
 
+            stmt.setString(1, title);//title parameter in sql statement
+
+
 
 
 
