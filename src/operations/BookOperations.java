@@ -11,14 +11,9 @@ import java.sql.SQLException;
 
 public class BookOperations{
     public static void addBook(){
-
-
-    } //  init addBook method
-
-    public  static void updateBook(){
         try(Connection conn= jdbc.getConnection();
 
-        Scanner scanner= new Scanner(System.in))
+            Scanner scanner= new Scanner(System.in))
         {
             System.out.println("Enter Book Title:" );
             String title=scanner.nextLine(); //get user input and store
@@ -40,19 +35,18 @@ public class BookOperations{
             stmt.executeUpdate();
 
             System.out.println("Book added successfully.");//execute statement
-
-
-
-
-
-
-
-
-
         }catch(SQLException e){
             e.printStackTrace();
 
         }//automatically close database  throw try catch statement
+
+
+
+        } //  init addBook method
+
+    public  static void updateBook(){
+
+
 
 
     } //init updateBook method
