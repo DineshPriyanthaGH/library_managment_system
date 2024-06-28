@@ -26,6 +26,9 @@ public class BookOperations{
             String author=scanner.nextLine(); //get user input and store
             System.out.println("Enter Book publisher:" );
             String publisher=scanner.nextLine(); //get user input and store
+            System.out.println("Enter Book Year:" );
+            String year=scanner.nextLine(); //get user input and store
+
 
 
 
