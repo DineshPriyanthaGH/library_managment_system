@@ -9,3 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
  import java.util.Scanner; // import user input get class
 
+public class BookOperations{
+
+} // create class BookOperations
