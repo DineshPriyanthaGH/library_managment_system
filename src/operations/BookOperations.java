@@ -10,6 +10,7 @@ import java.sql.SQLException;
  import java.util.Scanner; // import user input get class
 
 public class BookOperations{
+    /////////////////////////////////////////////////////////////////////////////////////////add book
     public static void addBook(){
         try(Connection conn= jdbc.getConnection();
 
@@ -41,9 +42,8 @@ public class BookOperations{
         }//automatically close database  throw try catch statement
 
 
-
         } //  init addBook method
-
+    //////////////////////////////////////////////////////////////////////////////////update book
     public  static void updateBook(){
         try (Connection conn = jdbc.getConnection();
              Scanner scanner = new Scanner(System.in)) {
@@ -54,6 +54,8 @@ public class BookOperations{
             String title = scanner.nextLine(); // get  new title as input
             System.out.println("Enter new author:");
             String author= scanner.nextLine(); // get new author as input
+            System.out.println("Enter new Publisher:");
+            String publisher= scanner.nextLine();//get new publisher as input
 
 
         }catch(SQLException e) {
