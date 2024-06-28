@@ -45,8 +45,12 @@ public class BookOperations{
         } //  init addBook method
 
     public  static void updateBook(){
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = jdbc.getConnection();
              Scanner scanner = new Scanner(System.in)) {
+
+            System.out.println("Enter Book ID to Update");
+            int id = scanner.nextInt(); //get book id as input
+
 
         }catch(SQLException e) {
             e.printStackTrace();
