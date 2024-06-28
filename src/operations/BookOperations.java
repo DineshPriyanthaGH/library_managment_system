@@ -14,4 +14,7 @@ public class BookOperations{
 
     } //  init addBook method
 
+    public  static void updateBook(){
+
+    } //init updateBook method
 } // create class BookOperations
