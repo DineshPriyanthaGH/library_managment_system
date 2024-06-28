@@ -1,4 +1,5 @@
 
+package db ; // inside the db package
 //import JDBC classes
 import java.sql.Connection;
 import java.sql.DriverManager;
