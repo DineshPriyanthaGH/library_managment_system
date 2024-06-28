@@ -31,6 +31,9 @@ public class BookOperations{
 
             String query = "INSERT INTO books (title,author,publisher,year_published) VALUES(?,?,?,?)"; //  QUERY TO Store in database user input
 
+            PreparedStatement stmt = conn.prepareStatement(query); //sql statement
+
+
 
 
 
