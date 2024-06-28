@@ -10,15 +10,11 @@ import java.sql.SQLException;
  import java.util.Scanner; // import user input get class
 
 public class BookOperations{
+    /////////////////////////////////////////////////////////////////////////////////////////add book
     public static void addBook(){
-
-
-    } //  init addBook method
-
-    public  static void updateBook(){
         try(Connection conn= jdbc.getConnection();
 
-        Scanner scanner= new Scanner(System.in))
+            Scanner scanner= new Scanner(System.in))
         {
             System.out.println("Enter Book Title:" );
             String title=scanner.nextLine(); //get user input and store
@@ -40,19 +36,37 @@ public class BookOperations{
             stmt.executeUpdate();
 
             System.out.println("Book added successfully.");//execute statement
-
-
-
-
-
-
-
-
-
         }catch(SQLException e){
             e.printStackTrace();
 
         }//automatically close database  throw try catch statement
+
+
+        } //  init addBook method
+    //////////////////////////////////////////////////////////////////////////////////update book
+    public  static void updateBook(){
+        try (Connection conn = jdbc.getConnection();
+             Scanner scanner = new Scanner(System.in)) {
+
+            System.out.println("Enter Book ID to Update:");
+            int id = scanner.nextInt(); //get book id as input
+            System.out.println("Enter New Book Title:");
+            String title = scanner.nextLine(); // get  new title as input
+            System.out.println("Enter new author:");
+            String author= scanner.nextLine(); // get new author as input
+            System.out.println("Enter new Publisher:");
+            String publisher= scanner.nextLine();//get new publisher as input
+
+
+        }catch(SQLException e) {
+            e.printStackTrace();
+        }//automatically close database  throw try catch statement
+
+
+
+
+
+
 
 
     } //init updateBook method

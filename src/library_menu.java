@@ -26,21 +26,21 @@ public class library_menu {
 
             // select funtions according user choice using switch statements
             switch(choice){
-                case 0:
+                case 1:
                     BookOperations.addBook();
                     break;
-                case 1:
+                case 2:
                     BookOperations.updateBook();
                     break;
-                case 2:
+                case 3:
                     BookOperations.deleteBook();
                     break;
-                case 3:
+                case 4:
                     BookOperations.searchBook();
                     break;
 
 
-                case 4:
+                case 5:
                     System.out.println(".......");
                     break;
                 default:
