@@ -16,9 +16,15 @@ public class BookOperations{
     } //  init addBook method
 
     public  static void updateBook(){
-        try(){
+        try(Connection conn= jdbc.getConnection();
 
-        }catch(){
+        Scanner scanner= new Scanner(System.in))
+        {
+            System.out.println("Enter Book Title:" );
+            String title=scanner.nextLine(); //get user input and store
+
+        }catch(SQLException e){
+            e.printStackTrace();
 
         }//automatically close database  throw try catch statement
 
