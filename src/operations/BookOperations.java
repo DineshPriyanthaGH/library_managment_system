@@ -22,6 +22,9 @@ public class BookOperations{
         {
             System.out.println("Enter Book Title:" );
             String title=scanner.nextLine(); //get user input and store
+            System.out.println("Enter Book Author:" );
+            String author=scanner.nextLine(); //get user input and store
+
 
         }catch(SQLException e){
             e.printStackTrace();
