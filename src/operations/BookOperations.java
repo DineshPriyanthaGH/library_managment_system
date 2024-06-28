@@ -27,7 +27,7 @@ public class BookOperations{
             System.out.println("Enter Book publisher:" );
             String publisher=scanner.nextLine(); //get user input and store
             System.out.println("Enter Book Year:" );
-            String year_published=scanner.nextLine(); //get user input and store
+            int year_published=scanner.nextInt(); //get user input and store
 
             String query = "INSERT INTO books (title,author,publisher,year_published) VALUES(?,?,?,?)"; //  QUERY TO Store in database user input
 
@@ -36,7 +36,8 @@ public class BookOperations{
             stmt.setString(1, title);//title parameter in sql statement
             stmt.setString(2,author); //author parameter in sql statement
             stmt.setString(3,publisher);//publisher parameter in sql statement
-            stmt.setString(4,year_published);//year_published parameter in sql statement
+            stmt.setInt(4,year_published);//year_published parameter in sql statement
+
 
 
 
