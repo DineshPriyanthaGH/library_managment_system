@@ -16,6 +16,12 @@ public class BookOperations{
     } //  init addBook method
 
     public  static void updateBook(){
+        try(){
+
+        }catch(){
+
+        }//automatically close database  throw try catch statement
+
 
     } //init updateBook method
 
