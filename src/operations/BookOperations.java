@@ -37,6 +37,10 @@ public class BookOperations{
             stmt.setString(2,author); //author parameter in sql statement
             stmt.setString(3,publisher);//publisher parameter in sql statement
             stmt.setInt(4,year_published);//year_published parameter in sql statement
+            stmt.executeUpdate();
+
+            System.out.println("Book added successfully.");//execute statement
+
 
 
 
