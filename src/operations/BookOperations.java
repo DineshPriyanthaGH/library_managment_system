@@ -48,10 +48,12 @@ public class BookOperations{
         try (Connection conn = jdbc.getConnection();
              Scanner scanner = new Scanner(System.in)) {
 
-            System.out.println("Enter Book ID to Update");
+            System.out.println("Enter Book ID to Update:");
             int id = scanner.nextInt(); //get book id as input
-            System.out.println("Enter New Book Title");
+            System.out.println("Enter New Book Title:");
             String title = scanner.nextLine(); // get  new title as input
+            System.out.println("Enter new author:");
+            String author= scanner.nextLine(); // get new author as input
 
 
         }catch(SQLException e) {
