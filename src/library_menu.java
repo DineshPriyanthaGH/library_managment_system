@@ -1,7 +1,9 @@
 
-import operations.BookOperations; //import operations package to library Menu
-import java.util.InputMismatchException;
+import operations.BookOperations; //import bookoperations class package to library Menu
+import operations.MemberOperations;
+import java.util.InputMismatchException; //import Memberoperations package to library Menu
 import java.util.Scanner; //import get user input class
+
 
 public class library_menu {
     public static void main(String[] args){
