@@ -9,4 +9,10 @@ import java.sql.SQLException;
 import java.sql.Date; // import dates class to handling sql dates
 
 public class LoanOperations {
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Loan book
+    public static void loanBook(){
+
+    } //init loanbook class
+
 }
