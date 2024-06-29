@@ -17,6 +17,12 @@ public class LoanOperations {
         try (Connection conn = jdbc.getConnection();
 
              Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter book ID to loan: ");
+            int book_id = scanner.nextInt(); //get user input and store
+            System.out.print("Enter member ID: ");
+            int member_id = scanner.nextInt(); //get user input and store
+
+
 
         }catch (SQLException e) {
             System.out.println(e);
