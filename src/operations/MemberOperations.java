@@ -27,7 +27,7 @@ public class MemberOperations {
 
             stmt.setString(1, name);//name parameter in sql statement
             stmt.setString(2, email); //email parameter in sql statement
-            stmt.setInt(4, phone);//phone number parameter in sql statement
+            stmt.setInt(3, phone);//phone number parameter in sql statement
             stmt.executeUpdate();
 
             System.out.println("Member added successfully.");//execute statement
