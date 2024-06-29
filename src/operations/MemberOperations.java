@@ -26,7 +26,7 @@ public class MemberOperations {
             PreparedStatement stmt = conn.prepareStatement(query); //sql statement
 
             stmt.setString(1, name);//name parameter in sql statement
-
+            stmt.setString(2, email); //email parameter in sql statement
 
 
 
