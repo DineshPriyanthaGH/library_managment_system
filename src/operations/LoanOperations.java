@@ -50,6 +50,13 @@ public class LoanOperations {
     } //init loanbook class
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////return book
     public static void returnbook(){
+        try (Connection conn = jdbc.getConnection();
+             Scanner scanner = new Scanner(System.in)) {
+
+        }catch (SQLException e) {
+            System.out.println(e);
+        }//automatically close database  throw try catch statement
+
 
 
 
