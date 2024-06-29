@@ -33,6 +33,7 @@ public class LoanOperations {
             stmt.setInt(1, book_id);//book_id parameter in sql statement
             stmt.setInt(2, member_id); //member_id parameter in sql statement
             stmt.setDate(3,loan_date); //loan_date parameter in sql statement
+            stmt.setDate(4,return_date);//return_date parameter in sql statement
 
 
 
