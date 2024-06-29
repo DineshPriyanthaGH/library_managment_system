@@ -21,6 +21,7 @@ public class MemberOperations {
             String email = scanner.nextLine(); //get user input and store
             System.out.println("Enter Member Phone Number:");
             int phone = scanner.nextInt(); //get user input and store
+            String query = "INSERT INTO members (name,email,phone,) VALUES(?,?,?,?)"; //  QUERY TO Store in database user input
 
 
 
