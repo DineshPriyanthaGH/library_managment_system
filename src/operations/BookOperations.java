@@ -56,7 +56,21 @@ public class BookOperations{
             String author= scanner.nextLine(); // get new author as input
             System.out.println("Enter new Publisher:");
             String publisher= scanner.nextLine();//get new publisher as input
+            System.out.println("Enter new year Published:");
+            int year_published =scanner.nextInt(); //get new year as input
 
+            String query= "UPDATE books SET title=?,author=?,publisher=?,year_published=? WHERE id=?"; //set query to db upadte
+
+            PreparedStatement stmt= conn.prepareStatement(query); // set statement
+
+            stmt.setString(1, title);//title parameter in sql statement
+            stmt.setString(2,author); //author parameter in sql statement
+            stmt.setString(3,publisher);//publisher parameter in sql statement
+            stmt.setInt(4,year_published);//year_published parameter in sql statement
+
+            stmt.executeUpdate();
+
+            System.out.println("Book Updated successfully.");//execute statement
 
         }catch(SQLException e) {
             e.printStackTrace();
