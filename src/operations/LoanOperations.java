@@ -31,6 +31,8 @@ public class LoanOperations {
             PreparedStatement stmt = conn.prepareStatement(query); //sql statement
 
             stmt.setInt(1, book_id);//book_id parameter in sql statement
+            stmt.setInt(2, member_id); //member_id parameter in sql statement
+
 
 
 
