@@ -21,6 +21,8 @@ public class LoanOperations {
             int book_id = scanner.nextInt(); //get user input and store
             System.out.print("Enter member ID: ");
             int member_id = scanner.nextInt(); //get user input and store
+            System.out.print("Enter loan date (YYYY-MM-DD): ");
+            Date loan_date = Date.valueOf(scanner.next()); //get user input and store
 
 
 
