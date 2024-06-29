@@ -63,6 +63,7 @@ public class BookOperations{
 
             PreparedStatement stmt= conn.prepareStatement(query); // set statement
 
+            stmt.setString(1, title);//title parameter in sql statement
 
 
         }catch(SQLException e) {
