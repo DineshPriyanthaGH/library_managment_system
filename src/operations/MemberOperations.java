@@ -15,6 +15,13 @@ public class MemberOperations {
         try (Connection conn = jdbc.getConnection();
              Scanner scanner = new Scanner(System.in)) {
 
+            System.out.println("Enter Member Name:");
+            String name = scanner.nextLine(); //get user input and store
+
+
+
+
+
         }  catch (SQLException e) {
         System.out.println(e);
 
