@@ -126,7 +126,25 @@ public class BookOperations {
                     searchBooks(conn, query, "%" + title + "%");
                     break;
 
-            }
+                case 2:
+                    System.out.print("Enter author: ");
+                    String author = scanner.nextLine();
+                    query = "SELECT * FROM books WHERE author LIKE ?";
+                    searchBooks(conn, query, "%" + author + "%");
+                    break;
+                case 3:
+                    System.out.print("Enter year: ");
+                    int year = scanner.nextInt();
+                    query = "SELECT * FROM books WHERE year_published = ?";
+                    searchBooks(conn, query, String.valueOf(year));
+                    break;
+                default:
+                    System.out.println("Invalid search option.");
+
+
+
+
+            } /////////////switch statement for search book
 
 
             conn.close();
@@ -136,7 +154,9 @@ public class BookOperations {
         }//automatically close database  throw try catch statement
 
     }// init searchBook method
-////////////////////////////////////////////////////////////////////////////////////////////////////////////create statement for search book
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////create statement for search book
     private static void searchBooks(Connection conn, String query, String parameter) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement(query);
         stmt.setString(1, parameter);
