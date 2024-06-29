@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
- import java.util.Scanner; // import user input get class
+import java.util.Scanner; // import user input get class
 
 public class BookOperations {
     /////////////////////////////////////////////////////////////////////////////////////////add book
@@ -50,7 +50,7 @@ public class BookOperations {
              Scanner scanner = new Scanner(System.in)) {
 
             System.out.println("Enter Book ID to Update:");
-            int id = scanner.nextInt(); //get book id as input
+            int   book_id = scanner.nextInt(); //get book id as input
             scanner.nextLine(); //new line
             System.out.println("Enter New Book Title:");
             String title = scanner.nextLine(); // get  new title as input
@@ -61,10 +61,10 @@ public class BookOperations {
             System.out.println("Enter new year Published:");
             int year_published = scanner.nextInt(); //get new year as input
 
-            String query = "UPDATE books SET title=?,author=?,publisher=?,year_published=? WHERE id=?"; //set query to db upadte
+            String query = "UPDATE books SET title=?,author=?,publisher=?,year_published=? WHERE   book_id=?"; //set query to db upadte
 
             PreparedStatement stmt = conn.prepareStatement(query); // set statement
-            stmt.setInt(1, id);
+            stmt.setInt(1,   book_id);
             stmt.setString(2, title);//title parameter in sql statement
             stmt.setString(3, author); //author parameter in sql statement
             stmt.setString(4, publisher);//publisher parameter in sql statement
@@ -88,12 +88,12 @@ public class BookOperations {
              Scanner scanner = new Scanner(System.in)) {
 
             System.out.println("Enter book ID to delete:");
-            int id = scanner.nextInt(); //get user input to delete
+            int   book_id = scanner.nextInt(); //get user input to delete
 
 
-            String query = "DELETE FROM books WHERE id = ?";
+            String query = "DELETE FROM books WHERE   book_id = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
-            stmt.setInt(1, id);
+            stmt.setInt(1,   book_id);
             stmt.executeUpdate();
 
             System.out.println("Book deleted successfully."); //query db
@@ -162,7 +162,7 @@ public class BookOperations {
         stmt.setString(1, parameter);
         ResultSet rs = stmt.executeQuery();
         while (rs.next()) {
-            System.out.println("ID: " + rs.getInt("id"));
+            System.out.println("book_id:" + rs.getInt("  book_id"));
             System.out.println("Title: " + rs.getString("title"));
             System.out.println("Author: " + rs.getString("author"));
             System.out.println("Publisher: " + rs.getString("publisher"));
