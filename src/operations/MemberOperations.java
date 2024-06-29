@@ -9,4 +9,9 @@ import java.sql.SQLException;
 import java.util.Scanner; // import user input get class
 
 public class MemberOperations {
+   /////////////////////////////////////////////////////////////////////////add member
+
+    public static void addMember() {
+
+    }//create class memberOperations
 }
