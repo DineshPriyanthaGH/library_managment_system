@@ -65,7 +65,7 @@ public class BookOperations{
 
             stmt.setString(1, title);//title parameter in sql statement
             stmt.setString(2,author); //author parameter in sql statement
-
+            stmt.setString(3,publisher);//publisher parameter in sql statement
 
         }catch(SQLException e) {
             e.printStackTrace();
