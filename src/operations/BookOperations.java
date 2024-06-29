@@ -59,6 +59,8 @@ public class BookOperations{
             System.out.println("Enter new year Published:");
             int year_published =scanner.nextInt(); //get new year as input
 
+            String query= "UPDATE books SET title=?,author=?,publisher=?,year_published=? WHERE id=?"; //set query to db upadte
+
 
 
         }catch(SQLException e) {
