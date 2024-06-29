@@ -1,6 +1,6 @@
 
 import operations.BookOperations; //import bookoperations class package to library Menu
-import operations.MemberOperations;
+import operations.MemberOperations; //import Memberoperations class package to library Menu
 import java.util.InputMismatchException; //import Memberoperations package to library Menu
 import java.util.Scanner; //import get user input class
 
