@@ -90,6 +90,9 @@ public class BookOperations{
         try (Connection conn = jdbc.getConnection();
              Scanner scanner = new Scanner(System.in)) {
 
+            System.out.println("Enter book ID to delete:");
+            int id = scanner.nextInt(); //get user input to delete
+
 
         }catch(SQLException e) {
             e.printStackTrace();
