@@ -36,8 +36,9 @@ public class BookOperations{
             stmt.executeUpdate();
 
             System.out.println("Book added successfully.");//execute statement
+            conn.close();
         }catch(SQLException e){
-            e.printStackTrace();
+            System.out.println(e);
 
         }//automatically close database  throw try catch statement
 
@@ -63,18 +64,19 @@ public class BookOperations{
             String query= "UPDATE books SET title=?,author=?,publisher=?,year_published=? WHERE id=?"; //set query to db upadte
 
             PreparedStatement stmt= conn.prepareStatement(query); // set statement
+            stmt.setInt(1, id);
+            stmt.setString(2, title);//title parameter in sql statement
+            stmt.setString(3,author); //author parameter in sql statement
+            stmt.setString(4,publisher);//publisher parameter in sql statement
+            stmt.setInt(5,year_published);//year_published parameter in sql statement
 
-            stmt.setString(1, title);//title parameter in sql statement
-            stmt.setString(2,author); //author parameter in sql statement
-            stmt.setString(3,publisher);//publisher parameter in sql statement
-            stmt.setInt(4,year_published);//year_published parameter in sql statement
 
             stmt.executeUpdate();
 
             System.out.println("Book Updated successfully.");//execute statement
-
+            conn.close();
         }catch(SQLException e) {
-            e.printStackTrace();
+            System.out.println(e);
         }//automatically close database  throw try catch statement
 
 
@@ -102,10 +104,10 @@ public class BookOperations{
             System.out.println("Book deleted successfully."); //query db
 
 
-
+             conn.close();
 
         }catch(SQLException e) {
-            e.printStackTrace();
+            System.out.println(e);
         }//automatically close database  throw try catch statement
 
     }// init deleteBook method
@@ -114,8 +116,16 @@ public class BookOperations{
         try (Connection conn = jdbc.getConnection();
              Scanner scanner = new Scanner(System.in)) {
 
+            System.out.println("Search By 1.Title | 2.Author | 3.Year: (Enter 1 ,2 or 3)");//
+
+
+
+
+
+            conn.close();
+
         }catch(SQLException e) {
-            e.printStackTrace();
+            System.out.println(e);
         }//automatically close database  throw try catch statement
 
     }// init searchBook method
