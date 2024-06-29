@@ -68,6 +68,10 @@ public class BookOperations{
             stmt.setString(3,publisher);//publisher parameter in sql statement
             stmt.setInt(4,year_published);//year_published parameter in sql statement
 
+            stmt.executeUpdate();
+
+            System.out.println("Book Updated successfully.");//execute statement
+
         }catch(SQLException e) {
             e.printStackTrace();
         }//automatically close database  throw try catch statement
