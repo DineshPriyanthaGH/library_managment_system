@@ -26,6 +26,12 @@ public class LoanOperations {
             System.out.print("Enter due date (YYYY-MM-DD): ");
             Date return_date = Date.valueOf(scanner.next()); //get user input and store
 
+            String query = "INSERT INTO loons (book_id,member_id,loan_date,return_date) VALUES(?,?,?,?)"; //  QUERY TO Store in database user input
+
+
+
+
+
 
 
         }catch (SQLException e) {
