@@ -94,6 +94,16 @@ public class BookOperations{
             int id = scanner.nextInt(); //get user input to delete
 
 
+            String query = "DELETE FROM books WHERE id = ?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+
+            System.out.println("Book deleted successfully."); //query db
+
+
+
+
         }catch(SQLException e) {
             e.printStackTrace();
         }//automatically close database  throw try catch statement
