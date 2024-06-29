@@ -61,6 +61,8 @@ public class BookOperations{
 
             String query= "UPDATE books SET title=?,author=?,publisher=?,year_published=? WHERE id=?"; //set query to db upadte
 
+            PreparedStatement stmt= conn.prepareStatement(query); // set statement
+
 
 
         }catch(SQLException e) {
