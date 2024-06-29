@@ -117,6 +117,7 @@ public class BookOperations{
              Scanner scanner = new Scanner(System.in)) {
 
             System.out.println("Search By 1.Title | 2.Author | 3.Year: (Enter 1 ,2 or 3)");//
+            int searchOption = scanner.nextInt(); //get user input book id
 
 
 
