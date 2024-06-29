@@ -56,6 +56,8 @@ public class BookOperations{
             String author= scanner.nextLine(); // get new author as input
             System.out.println("Enter new Publisher:");
             String publisher= scanner.nextLine();//get new publisher as input
+            System.out.p
+
 
 
         }catch(SQLException e) {
