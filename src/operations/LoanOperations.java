@@ -23,6 +23,8 @@ public class LoanOperations {
             int member_id = scanner.nextInt(); //get user input and store
             System.out.print("Enter loan date (YYYY-MM-DD): ");
             Date loan_date = Date.valueOf(scanner.next()); //get user input and store
+            System.out.print("Enter due date (YYYY-MM-DD): ");
+            Date return_date = Date.valueOf(scanner.next()); //get user input and store
 
 
 
