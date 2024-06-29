@@ -35,6 +35,13 @@ public class LoanOperations {
             stmt.setDate(3,loan_date); //loan_date parameter in sql statement
             stmt.setDate(4,return_date);//return_date parameter in sql statement
 
+            stmt.executeUpdate();
+
+            System.out.println("Book Issued successfully.");
+
+            conn.close(); //close db connection
+
+
 
 
 
