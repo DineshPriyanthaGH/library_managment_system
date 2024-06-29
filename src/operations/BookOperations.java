@@ -56,7 +56,8 @@ public class BookOperations{
             String author= scanner.nextLine(); // get new author as input
             System.out.println("Enter new Publisher:");
             String publisher= scanner.nextLine();//get new publisher as input
-            System.out.p
+            System.out.println("Enter new year Published:");
+            int year_published =scanner.nextInt(); //get new year as input
 
 
 
