@@ -7,11 +7,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Date; // import dates class to handling sql dates
+import java.util.Scanner;
 
 public class LoanOperations {
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Loan book
     public static void loanBook(){
+
+        try (Connection conn = jdbc.getConnection();
+
+             Scanner scanner = new Scanner(System.in)) {
+
+        }catch (SQLException e) {
+            System.out.println(e);
+
+        }//automatically close database  throw try catch statement
 
     } //init loanbook class
 
