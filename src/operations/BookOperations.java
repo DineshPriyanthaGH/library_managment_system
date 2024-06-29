@@ -64,6 +64,7 @@ public class BookOperations{
             PreparedStatement stmt= conn.prepareStatement(query); // set statement
 
             stmt.setString(1, title);//title parameter in sql statement
+            stmt.setString(2,author); //author parameter in sql statement
 
 
         }catch(SQLException e) {
