@@ -23,6 +23,8 @@ public class MemberOperations {
             int phone = scanner.nextInt(); //get user input and store
             String query = "INSERT INTO members (name,email,phone,) VALUES(?,?,?,?)"; //  QUERY TO Store in database user input
 
+            PreparedStatement stmt = conn.prepareStatement(query); //sql statement
+
 
 
 
