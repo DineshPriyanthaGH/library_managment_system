@@ -17,6 +17,8 @@ public class MemberOperations {
 
             System.out.println("Enter Member Name:");
             String name = scanner.nextLine(); //get user input and store
+            System.out.println("Enter Member Email:");
+            String email = scanner.nextLine(); //get user input and store
 
 
 
