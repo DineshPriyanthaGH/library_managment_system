@@ -42,21 +42,16 @@ public class LoanOperations {
             conn.close(); //close db connection
 
 
-
-
-
-
-
-
-
-
-
-
         }catch (SQLException e) {
             System.out.println(e);
 
         }//automatically close database  throw try catch statement
 
     } //init loanbook class
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////return book
+    public static void returnbook(){
 
+
+
+    }// init deleteBook method
 }
