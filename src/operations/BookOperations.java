@@ -84,8 +84,15 @@ public class BookOperations{
 
 
     } //init updateBook method
-
+////////////////////////////////////////////////////////////////////////////////////////////////////delete book
     public static void deleteBook(){
+        try (Connection conn = jdbc.getConnection();
+             Scanner scanner = new Scanner(System.in)) {
+
+
+        }catch(SQLException e) {
+            e.printStackTrace();
+        }//automatically close database  throw try catch statement
 
     }// init deleteBook method
 
