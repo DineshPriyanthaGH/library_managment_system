@@ -28,6 +28,9 @@ public class LoanOperations {
 
             String query = "INSERT INTO loons (book_id,member_id,loan_date,return_date) VALUES(?,?,?,?)"; //  QUERY TO Store in database user input
 
+            PreparedStatement stmt = conn.prepareStatement(query); //sql statement
+
+
 
 
 
