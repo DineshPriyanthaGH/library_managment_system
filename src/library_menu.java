@@ -41,8 +41,10 @@ public class library_menu {
                     BookOperations.searchBook();
                     break;
 
-
                 case 5:
+                    MemberOperations.addMember();
+                    break;
+                case 6:
                     System.out.println(".......");
                     break;
                 default:
