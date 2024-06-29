@@ -109,8 +109,14 @@ public class BookOperations{
         }//automatically close database  throw try catch statement
 
     }// init deleteBook method
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////search book
     public static void searchBook(){
+        try (Connection conn = jdbc.getConnection();
+             Scanner scanner = new Scanner(System.in)) {
+
+        }catch(SQLException e) {
+            e.printStackTrace();
+        }//automatically close database  throw try catch statement
 
     }// init searchBook method
 } // create class BookOperations
