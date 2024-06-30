@@ -26,24 +26,22 @@ public class LoanOperations {
             System.out.print("Enter due date (YYYY-MM-DD): ");
             Date return_date = Date.valueOf(scanner.next()); //get user input and store
 
-            String query = "INSERT INTO loons (book_id,member_id,loan_date,return_date) VALUES(?,?,?,?)"; //  QUERY TO Store in database user input
+            String query = "INSERT INTO loans (book_id,member_id,loan_date,return_date) VALUES(?,?,?,?)"; //  QUERY TO Store in database user input
 
-            PreparedStatement stmt = conn.prepareStatement(query); //sql statement
+            PreparedStatement pstmt = conn.prepareStatement(query); //sql statement
 
-            stmt.setInt(1, book_id);//book_id parameter in sql statement
-            stmt.setInt(2, member_id); //member_id parameter in sql statement
-            stmt.setDate(3,loan_date); //loan_date parameter in sql statement
-            stmt.setDate(4,return_date);//return_date parameter in sql statement
-
-            stmt.executeUpdate();
-
+            pstmt.setInt(1, book_id);
+            pstmt.setInt(2, member_id);
+            pstmt.setDate(3, java.sql.Date.valueOf(loan_date.toLocalDate()));
+            pstmt.setDate(4, java.sql.Date.valueOf(return_date.toLocalDate()));
+            pstmt.executeUpdate();
             System.out.println("Book Issued successfully.");
 
             conn.close(); //close db connection
 
 
         }catch (SQLException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
 
         }//automatically close database  throw try catch statement
 
