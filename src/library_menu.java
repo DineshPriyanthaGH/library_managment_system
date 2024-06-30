@@ -21,10 +21,10 @@ public class library_menu {
             System.out.println("4.Search a book");
             System.out.println("5.Add a new member");
             System.out.println("6.Update Member Details");
-
-            System.out.println("7.Loan a Book");
-            System.out.println("8.Return a book");
-            System.out.println("9.Exit");
+            System.out.println("7.Search a Member ");
+            System.out.println("8.Loan a Book");
+            System.out.println("9.Return a book");
+            System.out.println("10.Exit");
             System.out.println("Enter Your Choice:");
 
             choice = scanner.nextInt(); //user choice save

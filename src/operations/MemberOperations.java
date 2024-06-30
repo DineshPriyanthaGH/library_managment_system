@@ -82,8 +82,8 @@ public class MemberOperations {
 
                     // Display search options
                     System.out.println("Search Member By 1.Name | 2.Email | 3.Phone Number: (Enter 1, 2 or 3)");
-                    int choice = scanner.nextInt();
-                    scanner.nextLine(); // Consume newline
+                    int choice = scanner.nextInt();//get user input book id
+                    scanner.nextLine(); //  newline
 
                     String query = "";
                     PreparedStatement stmt = null;
@@ -106,16 +106,16 @@ public class MemberOperations {
                         case 3:
                             System.out.print("Enter phone number: ");
                             String phone = scanner.nextLine();
-                            query = "SELECT * FROM members WHERE phone_number LIKE ?";
+                            query = "SELECT * FROM members WHERE phone LIKE ?";
                             stmt = conn.prepareStatement(query);
                             stmt.setString(1, "%" + phone + "%");
                             break;
                         default:
                             System.out.println("Invalid choice. Please enter 1, 2, or 3.");
                             return;
-                    }
+                    }/////////////switch statement for search book
 
-                    // Execute the query and process the results
+                    /////////////////////////////////////////////////////////////////////////////////////////////////////statements of print for the results
                     ResultSet rs = stmt.executeQuery();
                     boolean found = false;
 
@@ -123,7 +123,7 @@ public class MemberOperations {
                         int member_id = rs.getInt("member_id");
                         String name = rs.getString("name");
                         String email = rs.getString("email");
-                        String phone = rs.getString("phone_number");
+                        String phone = rs.getString("phone");
 
                         System.out.println("Member ID: " + member_id);
                         System.out.println("Name: " + name);
@@ -131,7 +131,7 @@ public class MemberOperations {
                         System.out.println("Phone Number: " + phone);
                         System.out.println("Books Borrowed:");
 
-                        // Query to find books borrowed by the member
+                        //////////////////////////////////////////////////////////////check book according member
                         String loanQuery = "SELECT books.book_id, books.title, loans.loan_date, loans.return_date " +
                                 "FROM loans " +
                                 "JOIN books ON loans.book_id = books.book_id " +
@@ -164,9 +164,9 @@ public class MemberOperations {
                     }
 
                 } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
+                    System.out.println(e);
+                }//automatically close database  throw try catch statement
+            }// init searchmember method
 
 
 
@@ -184,5 +184,6 @@ public class MemberOperations {
 
 
 
-    }//create class memberOperations
+
+}//create class memberOperations
 
