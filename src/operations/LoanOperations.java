@@ -54,6 +54,8 @@ public class LoanOperations {
              Scanner scanner = new Scanner(System.in)) {
             System.out.print("Enter loan ID to return: ");
             int loan_id = scanner.nextInt();//get user input and store
+            System.out.print("Enter return date (YYYY-MM-DD): ");
+            Date return_date = Date.valueOf(scanner.next());//get user input and store
 
 
 
