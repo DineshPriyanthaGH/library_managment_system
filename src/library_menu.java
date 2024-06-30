@@ -21,6 +21,7 @@ public class library_menu {
             System.out.println("4.Search a book");
             System.out.println("5.Add a new member");
             System.out.println("6.Update Member Details");
+
             System.out.println("7.Loan a Book");
             System.out.println("8.Return a book");
             System.out.println("9.Exit");
@@ -50,10 +51,15 @@ public class library_menu {
                     MemberOperations.updateMdetails();
                     break;
                 case 7:
-                    LoanOperations.loanBook();
+                    MemberOperations.searchMember();
+                    break;
                 case 8:
-                    LoanOperations.returnbook();
+                    LoanOperations.loanBook();
+                    break;
                 case 9:
+                    LoanOperations.returnbook();
+                    break;
+                case 10:
                     System.out.println(".......");
                     break;
                 default:
