@@ -2,6 +2,7 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        library_menu.run(); /////////////////////////////////////////////////library menu method call in mai.java
 
         }
     }
