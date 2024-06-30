@@ -34,13 +34,50 @@ public class MemberOperations {
             conn.close(); //close db connection
 
 
+        } catch (SQLException e) {
+            System.out.println(e);
+
+        }//automatically close database  throw try catch statement
+    }
+/////////////////////////////////////////////////////////////////////////////////////////update member details
+
+        public static void updateMdetails() {
+            try (Connection conn = jdbc.getConnection();
+                 Scanner scanner = new Scanner(System.in)) {
 
 
-        }  catch (SQLException e) {
-        System.out.println(e);
 
-    }//automatically close database  throw try catch statement
 
+
+
+
+                System.out.println("Enter Member ID to Update:");
+                int   member_id = scanner.nextInt(); //get member_id as input
+                scanner.nextLine(); //new line
+                System.out.println("Enter New Member Name:");
+                String name = scanner.nextLine(); // get  new name as input
+                System.out.println("Enter Member  new email:");
+                String email = scanner.nextLine(); // get new email as input
+                System.out.println("Enter new Phone Number");
+                int phone = scanner.nextInt(); //get new phone as input
+
+                String query = "UPDATE members SET name=?,email=?,phone=? WHERE   member_id=?"; //set query to db upadte
+
+                PreparedStatement stmt = conn.prepareStatement(query); // set statement
+
+                stmt.setString(1, name);//title parameter in sql statement
+                stmt.setString(2, email); //author parameter in sql statement
+                stmt.setInt(3, phone);//year_published parameter in sql statement
+                stmt.setInt(4, member_id);
+
+
+                stmt.executeUpdate();
+
+                System.out.println("Member Details  Updated successfully.");//execute statement
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println(e);
+            }//automatically close database  throw try catch statement
 
 
 
