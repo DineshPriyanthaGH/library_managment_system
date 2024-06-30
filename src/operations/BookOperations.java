@@ -49,6 +49,12 @@ public class BookOperations {
         try (Connection conn = jdbc.getConnection();
              Scanner scanner = new Scanner(System.in)) {
 
+
+
+
+
+
+
             System.out.println("Enter Book ID to Update:");
             int   book_id = scanner.nextInt(); //get book id as input
             scanner.nextLine(); //new line
@@ -64,11 +70,12 @@ public class BookOperations {
             String query = "UPDATE books SET title=?,author=?,publisher=?,year_published=? WHERE   book_id=?"; //set query to db upadte
 
             PreparedStatement stmt = conn.prepareStatement(query); // set statement
-            stmt.setInt(1,   book_id);
-            stmt.setString(2, title);//title parameter in sql statement
-            stmt.setString(3, author); //author parameter in sql statement
-            stmt.setString(4, publisher);//publisher parameter in sql statement
-            stmt.setInt(5, year_published);//year_published parameter in sql statement
+
+            stmt.setString(1, title);//title parameter in sql statement
+            stmt.setString(2, author); //author parameter in sql statement
+            stmt.setString(3, publisher);//publisher parameter in sql statement
+            stmt.setInt(4, year_published);//year_published parameter in sql statement
+            stmt.setInt(5, book_id);
 
 
             stmt.executeUpdate();
@@ -117,34 +124,67 @@ public class BookOperations {
 
             scanner.nextLine(); // next line
 
-            String query;
+            String query  = "";
+            PreparedStatement stmt = null;
+
             switch (searchOption) {
                 case 1:
                     System.out.print("Enter title: ");
                     String title = scanner.nextLine();
                     query = "SELECT * FROM books WHERE title LIKE ?";
-                    searchBooks(conn, query, "%" + title + "%");
+                    stmt = conn.prepareStatement(query);
+                    stmt.setString(1, "%" + title + "%");
                     break;
 
                 case 2:
                     System.out.print("Enter author: ");
                     String author = scanner.nextLine();
                     query = "SELECT * FROM books WHERE author LIKE ?";
-                    searchBooks(conn, query, "%" + author + "%");
+                    stmt = conn.prepareStatement(query);
+                    stmt.setString(1, "%" + author + "%");
                     break;
                 case 3:
                     System.out.print("Enter year: ");
+                    while (!scanner.hasNextInt()) {
+                        System.out.println("Invalid input. Please enter a valid year.");
+                        scanner.next(); // Discard invalid input
+                    }
                     int year = scanner.nextInt();
                     query = "SELECT * FROM books WHERE year_published = ?";
-                    searchBooks(conn, query, String.valueOf(year));
+                    stmt = conn.prepareStatement(query);
+                    stmt.setInt(1, year);
                     break;
                 default:
                     System.out.println("Invalid search option.");
+                    return;
 
 
 
 
             } /////////////switch statement for search book
+
+            ResultSet rs = stmt.executeQuery();
+            boolean found = false;
+
+            while (rs.next()) {
+                int book_id = rs.getInt("book_id");
+                String title = rs.getString("title");
+                String author = rs.getString("author");
+                String publisher = rs.getString("publisher");
+                int year_published = rs.getInt("year_published");
+
+                System.out.println("Book ID: " + book_id);
+                System.out.println("Title: " + title);
+                System.out.println("Author: " + author);
+                System.out.println("Publisher: " + publisher);
+                System.out.println("Year Published: " + year_published);
+                System.out.println("---------------------------------");
+                found = true;
+            }
+
+            if (!found) {
+                System.out.println("No books found matching the criteria.");
+            }
 
 
             conn.close();
@@ -157,18 +197,6 @@ public class BookOperations {
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////create statement for search book
-    private static void searchBooks(Connection conn, String query, String parameter) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement(query);
-        stmt.setString(1, parameter);
-        ResultSet rs = stmt.executeQuery();
-        while (rs.next()) {
-            System.out.println("book_id:" + rs.getInt("  book_id"));
-            System.out.println("Title: " + rs.getString("title"));
-            System.out.println("Author: " + rs.getString("author"));
-            System.out.println("Publisher: " + rs.getString("publisher"));
-            System.out.println("Year Published: " + rs.getInt("year_published"));
-            System.out.println("----");
-        }
+
 
     } // create class BookOperations
-}

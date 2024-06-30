@@ -48,6 +48,8 @@ public class library_menu {
                 case 6:
                     LoanOperations.loanBook();
                 case 7:
+                    LoanOperations.returnbook();
+                case 8:
                     System.out.println(".......");
                     break;
                 default:
