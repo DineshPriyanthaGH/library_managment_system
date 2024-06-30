@@ -58,12 +58,21 @@ public class LoanOperations {
             Date return_date = Date.valueOf(scanner.next());//get user input and store
 
             String query = "UPDATE loans SET return_date = ? WHERE loan_id = ?";//  QUERY TO Store in database user input
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setDate(1, return_date);
+            stmt.setInt(2, loan_id);
+            stmt.executeUpdate();
+            System.out.println("Book returned successfully.");
+
+            conn.close(); //close db connection
 
 
 
         }catch (SQLException e) {
             System.out.println(e);
         }//automatically close database  throw try catch statement
+
+
 
 
 
