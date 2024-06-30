@@ -40,6 +40,8 @@ public class MemberOperations {
         System.out.println(e);
 
     }//automatically close database  throw try catch statement
+/////////////////////////////////////////////////////////////////////////////////////////update member details
+
 
 
 
