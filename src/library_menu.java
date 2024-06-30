@@ -1,5 +1,6 @@
 
 import operations.BookOperations; //import bookoperations class package to library Menu
+import operations.LoanOperations;
 import operations.MemberOperations; //import Memberoperations class package to library Menu
 import java.util.InputMismatchException; //import Memberoperations package to library Menu
 import java.util.Scanner; //import get user input class
@@ -45,6 +46,8 @@ public class library_menu {
                     MemberOperations.addMember();
                     break;
                 case 6:
+                    LoanOperations.loanBook();
+                case 7:
                     System.out.println(".......");
                     break;
                 default:
