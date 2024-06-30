@@ -57,6 +57,8 @@ public class LoanOperations {
             System.out.print("Enter return date (YYYY-MM-DD): ");
             Date return_date = Date.valueOf(scanner.next());//get user input and store
 
+            String query = "UPDATE loans SET return_date = ? WHERE loan_id = ?";//  QUERY TO Store in database user input
+
 
 
         }catch (SQLException e) {
