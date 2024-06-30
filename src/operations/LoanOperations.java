@@ -52,6 +52,8 @@ public class LoanOperations {
     public static void returnbook(){
         try (Connection conn = jdbc.getConnection();
              Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter loan ID to return: ");
+            int loan_id = scanner.nextInt();//get user input and store
 
 
 
